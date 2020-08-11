@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+    <style>
+        .strike-through{
+            text-decoration: line-through;
+            color:lightgray;
+        }
+        .dark{
+            background-color: gray;
+        }
+        .blue-underline{
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:'#app',
+                data:{
+                    naverUrl : 'https://www.naver.com',
+                    face2Img : 'face2.png',
+                    alignLeft : 'left',
+                    alignRight :'right',
+                    alignCenter : 'center',
+                    colorRed : 'red',
+                    myFontSize : '150%',
+                    myBackColor : 'yellow',
+                    buClass : 'blue-underline',
+                    stClass : 'strike-through'
+
+                }
+            })
+        }
+
+    </script>
+    
+</head>
+<body>
+    <div id="app">
+        <p><a v-bind:href="naverUrl">네이버로 연결</a></p>
+        <p><img v-bind:src="face2Img">face2.png표시</p>
+        <p v-bind:align="alignLeft">텍스트를 왼쪽 정렬</p>
+        <p v-bind:align="alignRight">텍스트를 오른쪽정렬</p>
+        <p v-bind:align="alignCenter">텍스트를 가운데 정렬</p>
+        <p v-bind:style="{color:colorRed}">인라인스타일로 글자색을 빨간색으로</p>
+        <p v-bind:style="{color:colorRed, fontSize:myFontSize}">인라인스타일로 글자크기를 150% 크게 빨간색으로</p>
+        <p v-bind:style="{color:colorRed, fontSize:myFontSize, backgroundColor:myBackColor}">인라인스타일로 글자크기를 150%크게 빨간색으로 배경은 노란색으로</p>
+        <p v-bind:class="buClass">blue-underline class 지정</p>
+        <p v-bind:class="[stClass, buClass]">blue-underline,strike-through class 지정</p>
+    </div>
+</body>
+</html>

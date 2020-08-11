@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+    <script>
+        
+        var teaList = [
+            {name:'다즐링',price:600},
+            {name:'얼그레이',price:500},
+            {name:'실론',price:500}
+        ];
+        window.onload=function(){
+        new Vue({
+            el:'#app',
+            data:{
+                myTea: teaList
+            }
+        })
+    }
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{myTea}}</p>
+        <p>{{myTea[1].name}} {{myTea[1].price}}</p>
+    </div>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
